@@ -54,8 +54,8 @@
     php_xdebug_version: 2.2.4
     phpcs_version: 2.5.1
     phpcbf_version: 2.5.1
-    pycharm_version: "2016.3.2" #"2016.2" #"2016.1.4" #"2016.1"# 5.0.1 # 4.5.4
-#    pycharm_edition: community # professional | community
+    pycharm_version: "2017.2.3"  #"2016.3.2" #"2016.2" #"2016.1.4" #"2016.1"# 5.0.1 # 4.5.4
+    pycharm_edition: community # professional | community
     robomongo_version: 0.8.5
     rubies_location: /opt/rubies
     ruby_install_version: 0.6.0
@@ -206,7 +206,7 @@
 #     - include: tools/tasks_chrome_remote_desktop.yml  # remote access to your box
 #     - include: tools/tasks_dpr.yml # d.pr python client, recently had issues with running
 #     - include: tools/tasks_osquery.yml  # osquery.io package to query server data via sql like syntax  
-#     - include  tools/tasks_logwatch.yml # logwatch
+#     - include: tools/tasks_logwatch.yml # logwatch
 #     - include: tools/tasks_rsyslog.yml  # syslog server
 #     - include: tools/tasks_syncthing.yml # opensource file synchronizer
 #     - include: tools/tasks_kindlegen.yml # Installs kindle convertor for publishing books to amazon

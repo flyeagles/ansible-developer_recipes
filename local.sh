@@ -1,2 +1,2 @@
 #!/bin/sh
-ansible-playbook -i "localhost," -c local local.yml
+ansible-playbook -vvv -i "localhost," -c local local.yml

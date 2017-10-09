@@ -39,7 +39,9 @@
 
   - name: Worktools | action "open in terminal" for Nautilus
     apt: state=present pkg=nautilus-open-terminal
-    when: ansible_distribution_release != "xenial"
+    when: 
+        - ansible_distribution_release != "xenial"
+        - ansible_distribution_release != "zesty"
     become: yes
     tags:
       -worktools
@@ -160,25 +162,25 @@
       -setup
 
 
-  - name: Worktools | Add Google Chrome key
-    shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-    become: yes
-    when: google_apt_exists.rc == 1
-    tags:
-      -chrome
-      -setup
+#  - name: Worktools | Add Google Chrome key
+#    shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+#    become: yes
+#    when: google_apt_exists.rc == 1
+#    tags:
+#      -chrome
+#      -setup
 
-  - name: Worktools | Add Google Chrome repo
-    copy: content="deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" dest=/etc/apt/sources.list.d/google-chrome.list owner=root group=root mode=644
-    when: google_apt_exists.rc == 1
-    become: yes
-    tags:
-      -chrome
-      -setup
+#  - name: Worktools | Add Google Chrome repo
+#    copy: content="deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" dest=/etc/apt/sources.list.d/google-chrome.list owner=root group=root mode=644
+#    when: google_apt_exists.rc == 1
+#    become: yes
+#    tags:
+#      -chrome
+#      -setup
 
-  - name: Install Google Chrome
-    apt: update_cache=yes pkg=google-chrome-stable state=installed
-    become: yes
-    tags:
-      -chrome
-      -setup
+#  - name: Install Google Chrome
+#    apt: update_cache=yes pkg=google-chrome-stable state=installed
+#    become: yes
+#    tags:
+#      -chrome
+#      -setup
